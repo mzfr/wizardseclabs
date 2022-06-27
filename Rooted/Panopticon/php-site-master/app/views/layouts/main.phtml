@@ -1,0 +1,31 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <?php echo Tag::image(array('img/logo.png', 'width' => 80)) ?>
+            <form action="http://www.php.net/search.php" method="post" class="navbar-search pull-right">
+                <input type="text" name="pattern" class="search-query" placeholder="<?php echo $mt['searchFor'] ?>">
+            </form>
+        </div>
+    </div>
+    <div class="navbar-inner navbar-menu">
+        <nav>
+            <?php echo UIElements::getMenu($this, $mt) ?>        
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <?php echo $this->getContent() ?>
+    <hr>    
+</div>
+
+<footer>
+    <div class="copyright">    
+        <?php echo Tag::linkTo("copyright", "Copyright © 2001-2012 The PHP Group") ?>
+    </div>
+    <div class="language">
+           <?php echo $mt['changeLang'] ?>: <?php echo Tag::linkTo("set-language/en", "English") ?>  | <?php echo Tag::linkTo("set-language/es", "Español") ?>
+    </div>
+</footer>
